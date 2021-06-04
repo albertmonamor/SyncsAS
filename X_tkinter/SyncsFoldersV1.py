@@ -1,6 +1,6 @@
 import os
 
-# TEST UPDATE
+# TET UPDATE
 def chType(obj):
     """
         Aggressive  checking !
