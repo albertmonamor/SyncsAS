@@ -1,6 +1,6 @@
 import os
 
-# TET UPDATE
+
 def chType(obj):
     """
         Aggressive  checking !
@@ -23,7 +23,15 @@ def chType(obj):
 
 
 class MFolders(object):
+    """
+        class FOR Mapping Tree of Files And Folder that Into specific folder; using os.walk for recursion
+            ...
+            RETURN
+                self.TREE = list Contains All
+                    self.lisOfFiles = list Contains dict 2 value 'folder'=str, 'files'=list
+                        self.li = list Contains dict 6 value [see in code]
 
+    """
     def __init__(self):
         xRun = os.popen("echo %username%").read().split("\n")
         self.Name = xRun[0]
@@ -67,7 +75,10 @@ class MFolders(object):
 
 
 class SyncFolders(MFolders):
+    """
+        work with class MFolder
 
+    """
     def __init__(self, obj=None):
         MFolders.__init__(self)
         self.liFilesMain = []
@@ -117,6 +128,8 @@ class SyncFolders(MFolders):
 
 if __name__ == "__main__":
     s = SyncFolders()
+    print(s.GetFolders(fr"c:\Users\{s.Name}\Desktop\OK"))
+    exit()
     s.Sync(s.GetFolders(fr"c:\Users\{s.Name}\Desktop\OK",
                         fr"c:\Users\{s.Name}\Desktop\Main"), RSL=True)
 
