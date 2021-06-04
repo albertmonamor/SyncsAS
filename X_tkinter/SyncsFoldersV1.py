@@ -19,6 +19,7 @@ def chType(obj):
             except PermissionError and OSError:
                 return False
         except FileNotFoundError:
+            # IDK maybe need True
             return False
 
 
