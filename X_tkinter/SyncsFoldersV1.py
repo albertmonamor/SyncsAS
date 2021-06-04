@@ -124,7 +124,7 @@ class SyncFolders(MFolders):
                         if not os.path.exists(Path):
                             os.system(f"copy \"{_['folder']}\\{create['name']}\""
                                       f" \"{FolderTS}\\{c_s[:c_s.rfind(self.slash) + 1]}\"")
-            break  # important
+            break
 
 
 if __name__ == "__main__":
