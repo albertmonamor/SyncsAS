@@ -128,8 +128,6 @@ class SyncFolders(MFolders):
 
 if __name__ == "__main__":
     s = SyncFolders()
-    print(s.GetFolders(fr"c:\Users\{s.Name}\Desktop\OK"))
-    exit()
     s.Sync(s.GetFolders(fr"c:\Users\{s.Name}\Desktop\OK",
                         fr"c:\Users\{s.Name}\Desktop\Main"), RSL=True)
 
