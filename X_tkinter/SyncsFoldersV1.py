@@ -11,16 +11,16 @@ def chType(obj):
         return False
     else:
         try:
-            try:
-                File = open(obj)
-                File.close()
-                return True
-
-            except PermissionError and OSError:
-                return False
+            open(obj).close()
+            return True
         except FileNotFoundError:
             # IDK maybe need True
             return False
+        except PermissionError:
+            return False
+        except OSError:
+            return False
+        
 
 
 class MFolders(object):
@@ -34,8 +34,7 @@ class MFolders(object):
 
     """
     def __init__(self):
-        xRun = os.popen("echo %username%").read().split("\n")
-        self.Name = xRun[0]
+        self.Name = os.getlogin()
         self.lisOfFiles = []
         self.li = []
         self.TREE = []
